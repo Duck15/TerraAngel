@@ -7,13 +7,16 @@ TerraAngel is a modern and feature-rich utility client for Terraria.
 </p>
 <br>
 
+
+你是中文用户？[点我](/README-zh_CN.md)
+
 <h2>
 Installation
 </h2>
 
-Please note that this client is currently only available for Windows
 
-In order to use it, you will need to have [git](https://git-scm.com/download/win) and the [dotnet 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) installed on your machine
+
+In order to use it, you will need to have [git](https://git-scm.com/download/win) and the [dotnet 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed on your machine
 
 Be sure to restart your computer after you install these
 
@@ -21,15 +24,15 @@ To install the client, follow these steps:
 
   1. Open a terminal or command prompt
 
-  2. Clone the repository by running the following command: `git clone https://github.com/CEO-Chair/TerraAngel.git --recursive`
+  2. Clone the repository by running the following command: `git clone https://github.com/UnrealMultiple/TerraAngel.git --recursive`,and the original project on clone by `git clone https://github.com/CEO-Chair/TerraAngel.git --recursive`
 
   ![image](https://user-images.githubusercontent.com/87276335/182042166-c967bcba-cd52-4372-ad75-3bc5faaac0ea.png)
 
-  3. Run the `fast_start.bat` and wait for it to finish. This may take a few minutes
+  3. Run the `fast.ps1 -Start` and wait for it to finish. This may take a few minutes
 
   ![image](https://user-images.githubusercontent.com/87276335/182042235-9ce87d19-61ee-4636-b3ab-eee0ccb0e428.png)
 
-  4. If the process finishes successfully, the client will be built in the `src/TerraAngel/Terraria/bin/Release/net7.0/` folder
+  4. If the process finishes successfully, the client will be built in the `src/TerraAngel/Terraria/bin/Release/net8.0/` folder
 
   ![image](https://user-images.githubusercontent.com/87276335/182298612-c9aa34a2-9df7-4047-9a4f-a465c95419a1.png)
 
@@ -38,10 +41,11 @@ To install the client, follow these steps:
 <h2>
 Updating
 </h2>
+Warning:I do not really to finish the update with powershell version,please chenk it by yourself.
 
 To update the client and pull any changes, run `fast_update.bat`
 
-Then run `fast_compile.bat` to build the updated client
+Then run `fast.ps1 -Update` to build the updated client
 
 <h2>
 Development
@@ -49,7 +53,7 @@ Development
 
 After installing the client, you can edit the source code of the client in `src/TerraAngel/Terraria`
 
-Run `fast_diff.bat` to create patches based on your changes
+Run `fast.ps1 -Diff` to create patches based on your changes
 
 <h2>
 Client features
@@ -136,7 +140,7 @@ Planned features
 System Requirements
 </h2>
 
-Because TerraAngel uses FNA instead of XNA, not all devices are compatible
+Because TerraAngel uses *FNA* instead of *XNA*, not all devices are compatible
 
 - Windows 7+
 - OpenGL 3.0+ or D3D11
