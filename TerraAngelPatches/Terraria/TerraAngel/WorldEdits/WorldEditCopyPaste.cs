@@ -82,10 +82,10 @@ public class WorldEditCopyPaste : WorldEdit
 
     public override bool DrawUITab(ImGuiIOPtr io)
     {
-        if (ImGui.BeginTabItem("Copy/Paste"))
+        if (ImGui.BeginTabItem("复制/黏贴"))
         {
-            ImGui.Checkbox("Destroy Tiles", ref DestroyTiles);
-            ImGui.Text("Place Mode"); ImGui.SameLine(); ImGui.Combo("##PlaceMode", ref CurrentPlaceMode, PlaceModes, PlaceModes.Length);
+            ImGui.Checkbox("替换原有物块", ref DestroyTiles);
+            ImGui.Text("放置模式"); ImGui.SameLine(); ImGui.Combo("##PlaceMode", ref CurrentPlaceMode, PlaceModes, PlaceModes.Length);
             ImGui.EndTabItem();
             return true;
         }

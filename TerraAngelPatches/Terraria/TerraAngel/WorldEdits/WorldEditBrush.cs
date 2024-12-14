@@ -8,26 +8,27 @@ public class WorldEditBrush : WorldEdit
 {
     public enum TileEditActions
     {
-        None,
-        Break,
-        Place,
-        Replace,
+        无,
+        破坏,
+        放置,
+        替换,
     }
     public enum WallEditActions
     {
-        None,
-        Break,
-        Place,
-        Replace,
+        无,
+        破坏,
+        放置,
+        替换,
     }
+}
     public enum LiquidEditActions
     {
-        None,
-        Remove,
-        Water,
-        Lava,
-        Honey,
-        Shimmer,
+        无,
+        移除,
+        水,
+        岩浆,
+        蜂蜜,
+        微光,
     }
 
 
@@ -118,24 +119,24 @@ public class WorldEditBrush : WorldEdit
 
     public override bool DrawUITab(ImGuiIOPtr io)
     {
-        if (ImGui.BeginTabItem("Brush"))
+        if (ImGui.BeginTabItem("笔刷（用鼠标中键操作）"))
         {
-            ImGui.Checkbox("Draw detailed preview", ref drawDetailedPreview);
-            ImGui.Checkbox("Square tile frame", ref sqaureFrame);
-            ImGui.Checkbox("Attempt to bypass TShock", ref teleportToTilesFarAway);
-            ImGui.Checkbox("Reveal Map", ref revealMap);
-            if (ImGui.SliderInt("Brush Diameter", ref brushDiameter, 16, 800))
+            ImGui.Checkbox("绘制详细预览", ref drawDetailedPreview);
+            ImGui.Checkbox("启用方块框架", ref sqaureFrame);
+            ImGui.Checkbox("尝试绕过TShock", ref teleportToTilesFarAway);
+            ImGui.Checkbox("同步地图", ref revealMap);
+            if (ImGui.SliderInt("笔刷直径", ref brushDiameter, 16, 800))
             {
                 if (brushDiameter > 600)
                     drawDetailedPreview = false;
                 else
                     drawDetailedPreview = true;
             }
-            ImGui.Text("Tile"); ImGui.SameLine();
+            ImGui.Text("物块"); ImGui.SameLine();
             ImGui.Combo("##WorldEditTileActions", ref currentTileAction, tileActionNames, tileActionNames.Length);
-            ImGui.Text("Wall"); ImGui.SameLine();
+            ImGui.Text("墙"); ImGui.SameLine();
             ImGui.Combo("##WorldEditWallActions", ref currentWallAction, wallActionNames, wallActionNames.Length);
-            ImGui.Text("Liquid"); ImGui.SameLine();
+            ImGui.Text("液体"); ImGui.SameLine();
             ImGui.Combo("##WorldEditLiquidActions", ref currentLiquidAction, liquidActionNames, liquidActionNames.Length);
 
 

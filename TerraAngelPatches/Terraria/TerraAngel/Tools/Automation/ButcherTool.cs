@@ -12,20 +12,20 @@ public class ButcherTool : Tool
 
     public override void DrawUI(ImGuiIOPtr io)
     {
-        if (ImGui.Button("杀死所有敌怪"))
+        if (ImGui.Button("一键清怪"))
         {
             Butcher.ButcherAllHostileNPCs(ButcherDamage);
         }
-        ImGui.Checkbox("Auto-Butcher Hostiles", ref AutoButcherHostiles);
-        if (ImGui.Button("杀死所有NPC"))
+        ImGui.Checkbox("自动清怪", ref AutoButcherHostiles);
+        if (ImGui.Button("屠村"))
         {
             Butcher.ButcherAllFriendlyNPCs(ButcherDamage);
         }
-        if (ImGui.Button("杀死所有玩家"))
+        if (ImGui.Button("让所有玩家飞起来!"))
         {
             Butcher.ButcherAllPlayers(ButcherDamage);
         }
-        ImGui.SliderInt("使用伤害", ref ButcherDamage, 1, (int)short.MaxValue);
+        ImGui.SliderInt("伤害", ref ButcherDamage, 1, (int)short.MaxValue);
     }
 
     public override void Update()

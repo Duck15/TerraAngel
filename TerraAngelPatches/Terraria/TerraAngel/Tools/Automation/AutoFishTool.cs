@@ -51,14 +51,14 @@ public class AutoFishTool : Tool
                 ImGui.Checkbox("允许所有物品", ref AcceptAllItems);
                 if (AcceptItems && !AcceptAllItems)
                 {
-                    ImGui.Checkbox("Accept Quest Fish", ref AcceptQuestFish);
-                    ImGui.Checkbox("Accept Crates", ref AcceptCrates);
-                    ImGui.Checkbox("Accept Normal", ref AcceptNormal);
-                    ImGui.Checkbox("Accept Common", ref AcceptCommon);
-                    ImGui.Checkbox("Accept Uncommon", ref AcceptUncommon);
-                    ImGui.Checkbox("Accept Rare", ref AcceptRare);
-                    ImGui.Checkbox("Accept Very Rare", ref AcceptVeryRare);
-                    ImGui.Checkbox("Accept Legendary", ref AcceptLegendary);
+                    ImGui.Checkbox("允许任务鱼", ref AcceptQuestFish);
+                    ImGui.Checkbox("允许板条箱", ref AcceptCrates);
+                    ImGui.Checkbox("允许正常的物品", ref AcceptNormal);
+                    ImGui.Checkbox("允许常见的物品", ref AcceptCommon);
+                    ImGui.Checkbox("允许不太常见的物品", ref AcceptUncommon);
+                    ImGui.Checkbox("允许稀有的物品", ref AcceptRare);
+                    ImGui.Checkbox("允许非常稀有的物品", ref AcceptVeryRare);
+                    ImGui.Checkbox("允许非常非常稀有的物品", ref AcceptLegendary);
                 }
                 ImGui.Checkbox("Accept NPCs", ref AcceptNPCs);
 

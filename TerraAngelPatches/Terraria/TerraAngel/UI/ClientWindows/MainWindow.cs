@@ -72,7 +72,7 @@ public class MainWindow : ClientWindow
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("自动挂机"))
+                    if (ImGui.BeginTabItem("辅助"))
                     {
                         foreach (Tool cringe in ToolManager.GetToolsOfTab(ToolTabs.AutomationTools))
                         {
