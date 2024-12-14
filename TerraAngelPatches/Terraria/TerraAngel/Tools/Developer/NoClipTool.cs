@@ -18,13 +18,13 @@ public class NoClipTool : Tool
         ImGui.Checkbox(Name, ref Enabled);
         if (Enabled)
         {
-            if (ImGui.CollapsingHeader("Noclip Settings"))
+            if (ImGui.CollapsingHeader("穿墙设置"))
             {
                 ImGui.Indent();
-                ImGui.TextUnformatted("Speed"); ImGui.SameLine();
+                ImGui.TextUnformatted("速度"); ImGui.SameLine();
                 ImGui.SliderFloat("##Speed", ref NoClipSpeed, 1f, 100f);
 
-                ImGui.TextUnformatted("Frames between sync"); ImGui.SameLine();
+                ImGui.TextUnformatted("帧同步"); ImGui.SameLine();
                 ImGui.SliderInt("##SyncTime", ref NoClipPlayerSyncTime, 1, 60);
                 ImGui.Unindent();
             }

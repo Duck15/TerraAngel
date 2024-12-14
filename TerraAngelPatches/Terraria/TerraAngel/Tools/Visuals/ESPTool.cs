@@ -43,27 +43,27 @@ public class ESPTool : Tool
 
     public override void DrawUI(ImGuiIOPtr io)
     {
-        ImGui.Checkbox("Draw Any ESP", ref DrawAnyESP);
+        ImGui.Checkbox("显示判定框", ref DrawAnyESP);
         if (DrawAnyESP)
         {
-            ImGui.Checkbox("Draw ESP on map", ref MapESP);
-            ImGui.Checkbox("Player hitboxes", ref PlayerBoxes);
-            ImGui.Checkbox("NPC hitboxes", ref NPCBoxes);
-            ImGui.Checkbox("Projectile hitboxes", ref ProjectileBoxes);
-            ImGui.Checkbox("Item hitboxes", ref ItemBoxes);
-            ImGui.Checkbox("Player tracers", ref PlayerTracers);
-            ImGui.Checkbox("Tile Sections", ref ShowTileSections);
-            if (ImGui.CollapsingHeader("ESP Colors"))
+            ImGui.Checkbox("在地图上展示判定框", ref MapESP);
+            ImGui.Checkbox("玩家判定框", ref PlayerBoxes);
+            ImGui.Checkbox("NPC 判定框", ref NPCBoxes);
+            ImGui.Checkbox("弹幕判定框", ref ProjectileBoxes);
+            ImGui.Checkbox("物品判定框", ref ItemBoxes);
+            ImGui.Checkbox("玩家追踪器", ref PlayerTracers);
+            ImGui.Checkbox("区块显示", ref ShowTileSections);
+            if (ImGui.CollapsingHeader("判定框颜色"))
             {
                 ImGui.Indent();
-                ImGuiUtil.ColorEdit4("Local player box color", ref LocalPlayerColor);
-                ImGuiUtil.ColorEdit4("Other player box color", ref OtherPlayerColor);
-                ImGuiUtil.ColorEdit4("Other TerraAngel user box color", ref OtherTerraAngelUserColor);
-                ImGuiUtil.ColorEdit4("Player Tracer color", ref TracerColor);
-                ImGuiUtil.ColorEdit4("NPC box color", ref NPCColor);
-                ImGuiUtil.ColorEdit4("NPC net box color", ref NPCNetOffsetColor);
-                ImGuiUtil.ColorEdit4("Projectile box color", ref ProjectileColor);
-                ImGuiUtil.ColorEdit4("Item box color", ref ItemColor);
+                ImGuiUtil.ColorEdit4("自己", ref LocalPlayerColor);
+                ImGuiUtil.ColorEdit4("别的玩家", ref OtherPlayerColor);
+                ImGuiUtil.ColorEdit4("别的TerraAngel玩家", ref OtherTerraAngelUserColor);
+                ImGuiUtil.ColorEdit4("追踪器颜色", ref TracerColor);
+                ImGuiUtil.ColorEdit4("NPC", ref NPCColor);
+                ImGuiUtil.ColorEdit4("NPC(多人联机网络延迟)", ref NPCNetOffsetColor);
+                ImGuiUtil.ColorEdit4("弹幕", ref ProjectileColor);
+                ImGuiUtil.ColorEdit4("物品", ref ItemColor);
                 ImGui.Unindent();
             }
         }

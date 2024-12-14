@@ -47,8 +47,8 @@ public class AutoFishTool : Tool
             if (ImGui.CollapsingHeader("自动钓鱼设置"))
             {
                 ImGui.Indent();
-                ImGui.Checkbox("Accept Items", ref AcceptItems);
-                ImGui.Checkbox("Accept All Items", ref AcceptAllItems);
+                ImGui.Checkbox("允许的物品", ref AcceptItems);
+                ImGui.Checkbox("允许所有物品", ref AcceptAllItems);
                 if (AcceptItems && !AcceptAllItems)
                 {
                     ImGui.Checkbox("Accept Quest Fish", ref AcceptQuestFish);
@@ -62,9 +62,9 @@ public class AutoFishTool : Tool
                 }
                 ImGui.Checkbox("Accept NPCs", ref AcceptNPCs);
 
-                ImGui.SliderInt("Randomization Min", ref frameCountRandomizationMin, 0, 120);
-                ImGui.SliderInt("Randomization Max", ref frameCountRandomizationMax, frameCountRandomizationMin, frameCountRandomizationMin + 120);
-                ImGui.Checkbox("Use specific mouse position", ref HasSpecialPosition); ImGui.SameLine(); ImGui.TextDisabled("*Press Ctrl+Alt to select specific cast position");
+                ImGui.SliderInt("随机最小值", ref frameCountRandomizationMin, 0, 120);
+                ImGui.SliderInt("随机最大值", ref frameCountRandomizationMax, frameCountRandomizationMin, frameCountRandomizationMin + 120);
+                ImGui.Checkbox("使用固定的鼠标位置", ref HasSpecialPosition); ImGui.SameLine(); ImGui.TextDisabled("*Press Ctrl+Alt to select specific cast position");
                 ImGui.Unindent();
             }
         }

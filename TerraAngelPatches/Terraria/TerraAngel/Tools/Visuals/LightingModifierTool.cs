@@ -15,12 +15,12 @@ public class LightingModifierTool : Tool
 
     public override void DrawUI(ImGuiIOPtr io)
     {
-        if (ImGui.Checkbox("Full Bright", ref FullBright))
+        if (ImGui.Checkbox("无视亮度", ref FullBright))
         {
             Lighting.Mode = Lighting.Mode;
         }
 
-        ImGui.TextUnformatted("Brightness"); ImGui.SameLine();
+        ImGui.TextUnformatted("指定亮度"); ImGui.SameLine();
         float tmp = Brightness * 100f;
         if (ImGui.SliderFloat("##Brightness", ref tmp, 1f, 100f))
         {

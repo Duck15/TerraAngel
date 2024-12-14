@@ -27,18 +27,18 @@ public class ProjectilePredictionTool : Tool
 
     public override void DrawUI(ImGuiIOPtr io)
     {
-        ImGui.Checkbox("Projectile Prediction", ref DrawActiveProjectilePrediction);
+        ImGui.Checkbox("弹幕预测", ref DrawActiveProjectilePrediction);
 
         if (DrawActiveProjectilePrediction)
         {
-            if (ImGui.CollapsingHeader("Projectile Prediction Settings"))
+            if (ImGui.CollapsingHeader("弹幕预测设置"))
             {
                 ImGui.Indent();
-                ImGui.Checkbox("Draw Friendly", ref DrawFriendlyProjectiles);
-                ImGui.Checkbox("Draw Hostile", ref DrawHostileProjectiles);
-                ImGuiUtil.ColorEdit4("Friendly Color", ref FriendlyDrawColor);
-                ImGuiUtil.ColorEdit4("Hostile Color", ref HostileDrawColor);
-                ImGui.SliderInt("Max Step Count", ref MaxStepCount, 100, 10000);
+                ImGui.Checkbox("友方弹幕", ref DrawFriendlyProjectiles);
+                ImGui.Checkbox("敌方弹幕", ref DrawHostileProjectiles);
+                ImGuiUtil.ColorEdit4("友方弹幕颜色", ref FriendlyDrawColor);
+                ImGuiUtil.ColorEdit4("敌方弹幕颜色", ref HostileDrawColor);
+                ImGui.SliderInt("最大数量", ref MaxStepCount, 100, 10000);
                 ImGui.Unindent();
             }
         }

@@ -150,14 +150,14 @@ public class ChatWindow : ClientWindow
         if (IsChatting && ImGui.BeginMenuBar())
         {
             ImGui.SetCursorPosY(ImGui.GetCursorPosY() + 1f);
-            ImGui.TextUnformatted("Chat");
+            ImGui.TextUnformatted("聊天栏");
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 1f));
 
             if (ImGui.Button($"{(IsLocked ? Icon.Lock : Icon.Unlock)}")) IsLocked = !IsLocked;
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text($"Chat {(IsLocked ? "Locked" : "Unlocked")}");
+                ImGui.Text($"聊天栏 {(IsLocked ? "已锁定" : "已解锁")}");
                 ImGui.EndTooltip();
             }
 
@@ -165,7 +165,7 @@ public class ChatWindow : ClientWindow
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text("Clear Chat");
+                ImGui.Text("清空聊天栏");
                 ImGui.EndTooltip();
             }
 
@@ -173,7 +173,7 @@ public class ChatWindow : ClientWindow
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text("Reset Position");
+                ImGui.Text("重置聊天栏位置");
                 ImGui.EndTooltip();
             }
 

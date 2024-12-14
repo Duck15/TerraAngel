@@ -16,8 +16,8 @@ public class OptimizationTool : Tool
 
     public override void DrawUI(ImGuiIOPtr io)
     {
-        ImGui.Checkbox("Disable Dust", ref DisableDust);
-        ImGui.Checkbox("Disable Gore", ref DisableGore);
+        ImGui.Checkbox("禁用沙漠特效", ref DisableDust);
+        ImGui.Checkbox("禁用血腥效果", ref DisableGore);
     }
 
     public override void Update()
