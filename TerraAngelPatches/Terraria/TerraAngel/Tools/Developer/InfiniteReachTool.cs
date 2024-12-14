@@ -2,7 +2,7 @@
 
 public class InfiniteReachTool : Tool
 {
-    public override string Name => "超级拾取";
+    public override string Name => "超级放置";
 
     public override ToolTabs Tab => ToolTabs.MainTools;
 

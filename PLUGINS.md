@@ -16,9 +16,9 @@ When a plugin is loaded, TerraAngel will look for a class in the plugin assembly
 
 ## Example Plugin
 
-Create a .NET class library for .NET 7.0, with a name ending in .TAPlugin (eg., Example.TAPlugin)
+Create a .NET class library for .NET 8.0, with a name ending in .TAPlugin (eg., Example.TAPlugin)
 
-This can be accompished from the CLI: `dotnet new classlib --name Example.TAPlugin --framework net7.0`
+This can be accompished from the CLI: `dotnet new classlib --name Example.TAPlugin --framework net8.0`
 
 ```cs
 using TerraAngel;

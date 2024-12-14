@@ -4,7 +4,7 @@ namespace TerraAngel.Tools.Developer;
 
 public class NoClipTool : Tool
 {
-    public override string Name => "Noclip";
+    public override string Name => "无视重力穿墙";
 
     public override ToolTabs Tab => ToolTabs.MainTools;
 

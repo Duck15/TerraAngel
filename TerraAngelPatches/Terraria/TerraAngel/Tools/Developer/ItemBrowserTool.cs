@@ -23,7 +23,7 @@ public class ItemBrowserTool : Tool
 
     public string ItemSearch = "";
 
-    public ItemGiveMode GiveMode = ItemGiveMode.InMouse;
+    public ItemGiveMode GiveMode = ItemGiveMode.鼠标;
 
     public bool SyncWithServer = true;
 
