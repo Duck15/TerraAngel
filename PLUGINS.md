@@ -6,7 +6,7 @@ TerraAngel supports extensions in the form of plugins.
 </p>
 <br>
 
-# Getting Started
+# Getting Started 
 
 ## Plugin Loading
 
