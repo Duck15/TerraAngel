@@ -2,7 +2,7 @@
 
 public class InfiniteManaTool : Tool
 {
-    public override string Name => "Infinite mana";
+    public override string Name => "无限魔力";
 
     public override ToolTabs Tab => ToolTabs.MainTools;
 

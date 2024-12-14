@@ -2,7 +2,7 @@
 
 public class AntiHurtTool : Tool
 {
-    public override string Name => "Anti-hurt/Godmode";
+    public override string Name => "上帝模式";
 
     public override ToolTabs Tab => ToolTabs.MainTools;
 

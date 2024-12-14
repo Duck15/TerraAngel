@@ -11,7 +11,7 @@ public class MainWindow : ClientWindow
 
     public override bool IsToggleable => false;
 
-    public override string Title => "Main Window";
+    public override string Title => "TerraAngel 主界面";
 
     public override bool IsGlobalToggle => true;
 
@@ -24,7 +24,7 @@ public class MainWindow : ClientWindow
         ImGui.SetNextWindowPos(new Vector2(0, io.DisplaySize.Y - windowSize.Y), ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowSize(windowSize, ImGuiCond.FirstUseEver);
 
-        ImGui.Begin("Main window");
+        ImGui.Begin("TerraAngel 主界面");
 
         if (!Main.gameMenu && Main.CanUpdateGameplay)
         {
@@ -43,13 +43,13 @@ public class MainWindow : ClientWindow
 
     public void DrawInGameWorld(ImGuiIOPtr io)
     {
-        if (ImGui.BeginTabBar("##MainTabBar"))
+        if (ImGui.BeginTabBar("##工具栏"))
         {
-            if (ImGui.BeginTabItem("Tools"))
+            if (ImGui.BeginTabItem("工具"))
             {
-                if (ImGui.BeginTabBar("ToolBar"))
+                if (ImGui.BeginTabBar("工具栏"))
                 {
-                    if (ImGui.BeginTabItem("Main Tools"))
+                    if (ImGui.BeginTabItem("小工具"))
                     {
                         foreach (Tool cringe in ToolManager.GetToolsOfTab(ToolTabs.MainTools))
                         {
@@ -58,11 +58,11 @@ public class MainWindow : ClientWindow
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("Items"))
+                    if (ImGui.BeginTabItem("物品"))
                     {
-                        if (ImGui.BeginTabBar("ItemBar"))
+                        if (ImGui.BeginTabBar("物品栏"))
                         {
-                            if (ImGui.BeginTabItem("Item Browser"))
+                            if (ImGui.BeginTabItem("物品浏览器"))
                             {
                                 ToolManager.GetTool<ItemBrowserTool>().DrawUI(io);
                                 ImGui.EndTabItem();
@@ -72,7 +72,7 @@ public class MainWindow : ClientWindow
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("Automation"))
+                    if (ImGui.BeginTabItem("自动挂机"))
                     {
                         foreach (Tool cringe in ToolManager.GetToolsOfTab(ToolTabs.AutomationTools))
                         {
@@ -94,18 +94,18 @@ public class MainWindow : ClientWindow
                 }
                 ImGui.EndTabItem();
             }
-            if (ImGui.BeginTabItem("Visuals"))
+            if (ImGui.BeginTabItem("渲染系统"))
             {
                 if (ImGui.BeginTabBar("VisualBar"))
                 {
-                    if (ImGui.BeginTabItem("Utility"))
+                    if (ImGui.BeginTabItem("渲染"))
                     {
                         foreach (Tool cringe in ToolManager.GetToolsOfTab(ToolTabs.VisualTools))
                         {
                             cringe.DrawUI(io);
                         }
 
-                        if (ImGui.Button("Reveal Map"))
+                        if (ImGui.Button("点亮全图"))
                         {
                             Task.Run(() =>
                             {
@@ -136,7 +136,7 @@ public class MainWindow : ClientWindow
                         }
                         ImGui.EndTabItem();
                     }
-                    if (ImGui.BeginTabItem("ESP"))
+                    if (ImGui.BeginTabItem("判定框"))
                     {
                         foreach (Tool cringe in ToolManager.GetToolsOfTab(ToolTabs.ESPTools))
                         {
@@ -145,7 +145,7 @@ public class MainWindow : ClientWindow
 
                         ImGui.EndTabItem();
                     }
-                    if (ImGui.BeginTabItem("Lighting"))
+                    if (ImGui.BeginTabItem("光照系统"))
                     {
                         foreach (Tool cringe in ToolManager.GetToolsOfTab(ToolTabs.LightingTools))
                         {
@@ -157,7 +157,7 @@ public class MainWindow : ClientWindow
                 }
                 ImGui.EndTabItem();
             }
-            if (ImGui.BeginTabItem("World Edit"))
+            if (ImGui.BeginTabItem("世界编辑器"))
             {
                 if (ImGui.BeginTabBar("WorldEditBar"))
                 {
@@ -178,7 +178,7 @@ public class MainWindow : ClientWindow
                 ClientLoader.MainRenderer!.CurrentWorldEditIndex = -1;
             }
 
-            if (ImGui.BeginTabItem("Misc"))
+            if (ImGui.BeginTabItem("奇奇怪怪"))
             {
                 foreach (Tool cringe in ToolManager.GetToolsOfTab(ToolTabs.MiscTools))
                 {
@@ -196,20 +196,20 @@ public class MainWindow : ClientWindow
     {
         if (ImGui.BeginTabBar("##MainTabBar"))
         {
-            if (ImGui.BeginTabItem("Tools"))
+            if (ImGui.BeginTabItem("工具"))
             {
-                if (ImGui.Button($"{Icon.Refresh} Client UUID"))
+                if (ImGui.Button($"{Icon.Refresh} 刷新客户端 UUID"))
                 {
                     Main.clientUUID = Guid.NewGuid().ToString();
                     Main.SaveSettings();
                 }
                 ImGui.SameLine();
-                if (ImGui.Button("Click to reveal"))
+                if (ImGui.Button("显示当前UUID"))
                 {
                     framesToShowUUIDFor = 600;
                 }
                 ImGui.SameLine();
-                if (ImGui.Button("Click to copy"))
+                if (ImGui.Button("复制当前UUID"))
                 {
                     ImGui.SetClipboardText(Main.clientUUID);
                 }

@@ -4,7 +4,7 @@ namespace TerraAngel.Tools.Automation;
 
 public class AutoAimTool : Tool
 {
-    public override string Name => "Auto-Aim";
+    public override string Name => "自瞄";
     public override ToolTabs Tab => ToolTabs.AutomationTools;
 
     public ref bool FavorBosses => ref ClientConfig.Settings.AutoAttackFavorBosses;
@@ -25,10 +25,10 @@ public class AutoAimTool : Tool
 
         if (Enabled)
         {
-            if (ImGui.CollapsingHeader("Auto-Attack Settings"))
+            if (ImGui.CollapsingHeader("自动攻击 设置"))
             {
                 ImGui.Indent();
-                ImGui.SliderFloat("Minimum Target Range", ref MinAttackRange, 1f, 2000f);
+                ImGui.SliderFloat("最小目标范围", ref MinAttackRange, 1f, 2000f);
                 if (ImGui.IsItemFocused())
                 {
                     if (Main.mapFullscreen)
@@ -41,11 +41,11 @@ public class AutoAimTool : Tool
                     }
                 }
 
-                ImGui.Checkbox("Require Line of Sight", ref RequireLineOfSight);
-                ImGui.Checkbox("Velocity Prediction", ref VelocityPrediction);
+                ImGui.Checkbox("只攻击视线内范围", ref RequireLineOfSight);
+                ImGui.Checkbox("移动预测", ref VelocityPrediction);
                 if (VelocityPrediction)
                 {
-                    ImGui.SliderFloat("Prediction Scaling", ref VelocityPrectionScaling, 1f, 30f);
+                    ImGui.SliderFloat("缩放预测", ref VelocityPrectionScaling, 1f, 30f);
 
                 }
 

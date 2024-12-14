@@ -6,7 +6,7 @@ namespace TerraAngel.Tools.Automation;
 
 public class AutoFishTool : Tool
 {
-    public override string Name => "Auto-Fish";
+    public override string Name => "自动钓鱼";
 
     public override ToolTabs Tab => ToolTabs.AutomationTools;
 
@@ -44,7 +44,7 @@ public class AutoFishTool : Tool
 
         if (Enabled)
         {
-            if (ImGui.CollapsingHeader("Auto-Fish settings"))
+            if (ImGui.CollapsingHeader("自动钓鱼设置"))
             {
                 ImGui.Indent();
                 ImGui.Checkbox("Accept Items", ref AcceptItems);

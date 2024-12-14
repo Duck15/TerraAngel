@@ -17,7 +17,7 @@ public class ItemBrowserTool : Tool
 
     public static readonly Vector2 ItemDrawSize = new Vector2(32, 32);
 
-    public override string Name => "Item Browser";
+    public override string Name => "物品浏览器";
 
     public override ToolTabs Tab => base.Tab;
 
@@ -38,12 +38,12 @@ public class ItemBrowserTool : Tool
     {
         ImGuiStylePtr style = ImGui.GetStyle();
 
-        ImGui.TextUnformatted("Search"); 
+        ImGui.TextUnformatted("搜索"); 
         ImGui.SameLine();
 
         ImGui.InputText("##ItemSearch", ref ItemSearch, 64);
 
-        ImGui.TextUnformatted("Give Type"); 
+        ImGui.TextUnformatted("给予方式"); 
         ImGui.SameLine();
 
         ImGui.PushItemWidth(MathF.Max(ImGui.GetContentRegionAvail().X / 3.4f, ImGui.CalcTextSize(ItemGiveModeNames[(int)GiveMode]).X + 30f));
@@ -52,7 +52,7 @@ public class ItemBrowserTool : Tool
         ImGui.PopItemWidth();
         ImGui.SameLine();
 
-        ImGui.Checkbox("Sync With Server", ref SyncWithServer);
+        ImGui.Checkbox("同步到服务器", ref SyncWithServer);
         bool searchEmpty = ItemSearch.Length == 0;
 
         if (ImGui.BeginChild("ItemBrowserScrolling"))
@@ -89,10 +89,10 @@ public class ItemBrowserTool : Tool
     {
         switch (GiveMode)
         {
-            case ItemGiveMode.InMouse:
+            case ItemGiveMode.鼠标:
                 ItemSpawner.SpawnItemInMouse(type, 9999, SyncWithServer);
                 break;
-            case ItemGiveMode.DropInWorld:
+            case ItemGiveMode.掉落物:
                 ItemSpawner.SpawnItemInWorld(Main.LocalPlayer.Center, type, Vector2.Zero, 9999, SyncWithServer);
                 break;
         }
@@ -100,7 +100,7 @@ public class ItemBrowserTool : Tool
 
     public enum ItemGiveMode
     {
-        InMouse,
-        DropInWorld,
+        鼠标,
+        掉落物,
     }
 }

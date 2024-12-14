@@ -37,7 +37,7 @@ public class MultiplayerAddServerUI : UIState, IHaveBackButtonCommand
             HAlign = 0.5f
         };
 
-        ServerNameText = new UIText("Server Name")
+        ServerNameText = new UIText("服务器名称")
         {
             HAlign = 0.0f,
             Top = { Pixels = 110 }
@@ -55,7 +55,7 @@ public class MultiplayerAddServerUI : UIState, IHaveBackButtonCommand
 
         RootElement.Append(ServerNameInput);
 
-        ServerIPText = new UIText("Server IP")
+        ServerIPText = new UIText("服务器地址")
         {
             Top = { Pixels = 240f },
             HAlign = 0.0f,
@@ -73,7 +73,7 @@ public class MultiplayerAddServerUI : UIState, IHaveBackButtonCommand
 
         RootElement.Append(ServerIPInput);
 
-        ServerPortText = new UIText("Server Port")
+        ServerPortText = new UIText("服务器端口")
         {
             Top = { Pixels = 240f },
             HAlign = 1.0f,
@@ -92,7 +92,7 @@ public class MultiplayerAddServerUI : UIState, IHaveBackButtonCommand
 
         RootElement.Append(ServerPortInput);
 
-        AcceptButton = new UIAutoScaleTextTextPanel<string>("Accept")
+        AcceptButton = new UIAutoScaleTextTextPanel<string>("添加服务器")
         {
             Width = { Percent = 1f },
             Height = { Pixels = 40 },

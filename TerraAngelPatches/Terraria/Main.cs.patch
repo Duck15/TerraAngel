@@ -1110,7 +1110,7 @@
  
              num11++;
 +            num5++;
-+            array9[num11] = "TerraAngel Settings";
++            array9[num11] = "TerraAngel 设置";
 +            if (selectedMenu == num11)
 +            {
 +                SoundEngine.PlaySound(10);
@@ -1120,7 +1120,7 @@
 +
 +            num11++;
 +            num5++;
-+            array9[num11] = "TerraAngel Plugins";
++            array9[num11] = "TerraAngel 插件";
 +            if (selectedMenu == num11)
 +            {
 +                SoundEngine.PlaySound(10);
