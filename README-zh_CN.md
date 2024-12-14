@@ -12,7 +12,7 @@ TerraAngel 是一个现代且功能丰富的 Terraria 客户端
 </h2>
 
 
-前提条件：[ git ]( https://git-scm.com/download/win )和[ dotnet 8 SDK ]( https://dotnet.microsoft.com/en-us/download/dotnet/8.0)，以及[泰拉瑞亚](https://store.steampowered.com/app/105600/Terraria/)
+前提条件：[ git ]( https://git-scm.com/download/win )和PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)或更高版本以及[ dotnet 8 SDK ]( https://dotnet.microsoft.com/en-us/download/dotnet/8.0)，以及[泰拉瑞亚](https://store.steampowered.com/app/105600/Terraria/)
 
 请务必于安装后重启电脑，这样可以避免发生一些奇奇怪怪的问题。
 

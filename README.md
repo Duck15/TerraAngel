@@ -16,7 +16,7 @@ Installation
 
 
 
-In order to use it, you will need to have [git](https://git-scm.com/download/win) and the [dotnet 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed on your machine
+In order to use it, you will need to have [git](https://git-scm.com/download/win) ,[PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4) or higher and the [dotnet 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed on your machine
 
 Be sure to restart your computer after you install these
 
