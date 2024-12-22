@@ -20,7 +20,7 @@ public class WorldEditBrush : WorldEdit
         放置,
         替换,
     }
-}
+    
     public enum LiquidEditActions
     {
         无,
@@ -190,45 +190,45 @@ public class WorldEditBrush : WorldEdit
 
         switch ((TileEditActions)currentTileAction)
         {
-            case TileEditActions.Break:
+            case TileEditActions.破坏:
                 KillTile(ref tile, x, y);
                 break;
-            case TileEditActions.Place:
+            case TileEditActions.放置:
                 PlaceTile(ref tile, currentPlayerCreateTile, currentPlayerCreateStyle, x, y, false);
                 break;
-            case TileEditActions.Replace:
+            case TileEditActions.替换:
                 PlaceTile(ref tile, currentPlayerCreateTile, currentPlayerCreateStyle, x, y, true);
                 break;
         }
 
         switch ((WallEditActions)currentWallAction)
         {
-            case WallEditActions.Break:
+            case WallEditActions.破坏:
                 KillWall(ref tile, x, y);
                 break;
-            case WallEditActions.Place:
+            case WallEditActions.放置:
                 PlaceWall(ref tile, currentPlayerCreateWall, x, y, false);
                 break;
-            case WallEditActions.Replace:
+            case WallEditActions.替换:
                 PlaceWall(ref tile, currentPlayerCreateWall, x, y, true);
                 break;
         }
 
         switch ((LiquidEditActions)currentLiquidAction)
         {
-            case LiquidEditActions.Remove:
+            case LiquidEditActions.移除:
                 KillLiquid(ref tile, x, y);
                 break;
-            case LiquidEditActions.Water:
+            case LiquidEditActions.水:
                 PlaceLiquid(ref tile, x, y, Tile.Liquid_Water);
                 break;
-            case LiquidEditActions.Lava:
+            case LiquidEditActions.岩浆:
                 PlaceLiquid(ref tile, x, y, Tile.Liquid_Lava);
                 break;
-            case LiquidEditActions.Honey:
+            case LiquidEditActions.蜂蜜:
                 PlaceLiquid(ref tile, x, y, Tile.Liquid_Honey);
                 break;
-            case LiquidEditActions.Shimmer:
+            case LiquidEditActions.微光:
                 PlaceLiquid(ref tile, x, y, Tile.Liquid_Shimmer);
                 break;
         }
