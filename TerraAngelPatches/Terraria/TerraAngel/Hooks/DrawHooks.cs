@@ -49,14 +49,14 @@ public class DrawHooks
 
                 if (InternalRepresentation.ProjectileIDFields.ContainsKey(projectileType))
                 {
-                    toolTipLine[numLines] = $"[a:[Projectile: {InternalRepresentation.GetProjectileIDName(projectileType)}/{projectileType}]]";
+                    toolTipLine[numLines] = $"[a:[射弹: {InternalRepresentation.GetProjectileIDName(projectileType)}/{projectileType}]]";
                     numLines++;
                 }
                 else
                 {
                     if (item.shoot > 0 && item.shoot < ProjectileID.Count && InternalRepresentation.ProjectileIDFields.ContainsKey(item.shoot))
                     {
-                        toolTipLine[numLines] = $"[a:[Projectile: {InternalRepresentation.GetProjectileIDName(item.shoot)}/{item.shoot}]]";
+                        toolTipLine[numLines] = $"[a:[射弹: {InternalRepresentation.GetProjectileIDName(item.shoot)}/{item.shoot}]]";
                         numLines++;
                     }
                 }
@@ -65,32 +65,32 @@ public class DrawHooks
             {
                 if (item.shoot > 0 && item.shoot < ProjectileID.Count && InternalRepresentation.ProjectileIDFields.ContainsKey(item.shoot) && (item.ammo == AmmoID.None || !InternalRepresentation.AmmoIDFields.ContainsKey(item.ammo)))
                 {
-                    toolTipLine[numLines] = $"[a:[Projectile: {InternalRepresentation.GetProjectileIDName(item.shoot)}/{item.shoot}]]";
+                    toolTipLine[numLines] = $"[a:[射弹: {InternalRepresentation.GetProjectileIDName(item.shoot)}/{item.shoot}]]";
                     numLines++;
                 }
             }
 
             if (item.createTile > -1 && item.createTile < TileID.Count && InternalRepresentation.TileIDFields.ContainsKey(item.createTile))
             {
-                toolTipLine[numLines] = $"[a:[Tile: {InternalRepresentation.GetTileIDName(item.createTile)}/{item.createTile}{(item.placeStyle > 0 ? $" {item.placeStyle}" : "")}]]";
+                toolTipLine[numLines] = $"[a:[物块: {InternalRepresentation.GetTileIDName(item.createTile)}/{item.createTile}{(item.placeStyle > 0 ? $" {item.placeStyle}" : "")}]]";
                 numLines++;
             }
 
             if (item.createWall > 0 && item.createWall < WallID.Count && InternalRepresentation.WallIDFields.ContainsKey(item.createWall))
             {
-                toolTipLine[numLines] = $"[a:[Wall: {InternalRepresentation.GetWallIDName(item.createWall)}/{item.createWall}]]";
+                toolTipLine[numLines] = $"[a:[墙: {InternalRepresentation.GetWallIDName(item.createWall)}/{item.createWall}]]";
                 numLines++;
             }
 
             if (item.ammo > 0 && item.ammo < AmmoID.NailFriendly + 1 && InternalRepresentation.AmmoIDFields.ContainsKey(item.ammo))
             {
-                toolTipLine[numLines] = $"[a:[Ammo: {InternalRepresentation.GetAmmoIDName(item.ammo)}/{item.ammo}]]";
+                toolTipLine[numLines] = $"[a:[弹药: {InternalRepresentation.GetAmmoIDName(item.ammo)}/{item.ammo}]]";
                 numLines++;
             }
 
             if (item.shootSpeed > 0f)
             {
-                toolTipLine[numLines] = $"[a:[Shoot Speed: {item.shootSpeed:F1}]]";
+                toolTipLine[numLines] = $"[a:[射击速度: {item.shootSpeed:F1}]]";
                 numLines++;
             }
 
@@ -98,11 +98,11 @@ public class DrawHooks
             {
                 if (item.buffTime > 0)
                 {
-                    toolTipLine[numLines] = $"[a:[Buff: {InternalRepresentation.GetBuffIDName(item.buffType)}/{item.buffType} for {TimeSpan.FromSeconds(item.buffTime / 60f):mm\\:ss}]]";
+                    toolTipLine[numLines] = $"[a:[增益: {InternalRepresentation.GetBuffIDName(item.buffType)}/{item.buffType} for {TimeSpan.FromSeconds(item.buffTime / 60f):mm\\:ss}]]";
                 }
                 else
                 {
-                    toolTipLine[numLines] = $"[a:[Buff: {InternalRepresentation.GetBuffIDName(item.buffType)}/{item.buffType}]]";
+                    toolTipLine[numLines] = $"[a:[增益: {InternalRepresentation.GetBuffIDName(item.buffType)}/{item.buffType}]]";
                 }
                 numLines++;
             }

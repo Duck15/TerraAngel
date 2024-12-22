@@ -24,9 +24,9 @@ public class MapScreenshotTool : Tool
 
     public override void DrawUI(ImGuiIOPtr io)
     {
-        if (ImGui.CollapsingHeader("Map Screenshot Settings"))
+        if (ImGui.CollapsingHeader("地图截图设置"))
         {
-            ImGui.SliderInt("Map Pixel per Tile", ref PixelsPerTile, 1, 32);
+            ImGui.SliderInt("像素点大小", ref PixelsPerTile, 1, 32);
             PixelsPerTile = Math.Max(0, PixelsPerTile);
         }
     }
@@ -104,7 +104,7 @@ public class MapScreenshotTool : Tool
 
                     Span2D<Color> bitmapSpan = new Span2D<Color>((void*)bitmapData.Scan0, bitmapData.Height, bitmapData.Width, 0);
 
-                    ClientLoader.Console.WriteLine("Taking map screenshot");
+                    ClientLoader.Console.WriteLine("正在对地图截图...");
 
                     for (int y = 0; y < size.Y; y++)
                     {
@@ -128,7 +128,7 @@ public class MapScreenshotTool : Tool
                     bitmap.UnlockBits(bitmapData);
 
                     SetClipboardBitmap(bitmap);
-                    ClientLoader.Console.WriteLine("Copied map screenshot to clipboard");
+                    ClientLoader.Console.WriteLine("已将地图截图复制到剪贴板。");
 
                 }
                 catch (Exception ex)

@@ -2,7 +2,7 @@
 
 public class DisableFramingTool : Tool
 {
-    public override string Name => "Disable tile framing";
+    public override string Name => "禁用物块高级渲染（仅对新渲染的区块有效）";
 
     public override ToolTabs Tab => ToolTabs.VisualTools;
 
