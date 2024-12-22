@@ -12,13 +12,13 @@ TerraAngel 是一个现代且功能丰富的 Terraria 客户端
 </h2>
 
 
-前提条件：[ git ]( https://git-scm.com/download/win )和[PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)或更高版本以及[ dotnet 8 SDK ]( https://dotnet.microsoft.com/en-us/download/dotnet/8.0)，以及[泰拉瑞亚](https://store.steampowered.com/app/105600/Terraria/)
+前提条件：[ git ]( https://git-scm.com/download/win )和[ PowerShell 7 ](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)或更高版本以及[ dotnet 8 SDK ]( https://dotnet.microsoft.com/en-us/download/dotnet/8.0)，以及[ 泰拉瑞亚 本体 ](https://store.steampowered.com/app/105600/Terraria/)
 
-请务必于安装后重启电脑，这样可以避免发生一些奇奇怪怪的问题。
+请务必于安装后重启电脑，这样可以避免发生一些奇奇怪怪的问题~~
 
 接下来，跟着教程来，一步一步走:
 
-  1. Shift+右键，打开cmd，或者powershell
+  1. Shift+右键，打开cmd，或者powershell，当然，powershell 7也不是不行
 
   2. 使用这条命令把项目源代码下载(clone)下来: `git clone https://github.com/Duck15/TerraAngel.git --recursive`
 
