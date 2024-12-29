@@ -2,7 +2,7 @@
 
 public class FreecamTool : Tool
 {
-    public override string Name => "Freecam";
+    public override string Name => "固定镜头";
 
     public override ToolTabs Tab => ToolTabs.VisualTools;
 

@@ -24,7 +24,7 @@ public class NoClipTool : Tool
                 ImGui.TextUnformatted("速度"); ImGui.SameLine();
                 ImGui.SliderFloat("##Speed", ref NoClipSpeed, 1f, 100f);
 
-                ImGui.TextUnformatted("帧同步"); ImGui.SameLine();
+                ImGui.TextUnformatted("帧同步时间"); ImGui.SameLine();
                 ImGui.SliderInt("##SyncTime", ref NoClipPlayerSyncTime, 1, 60);
                 ImGui.Unindent();
             }

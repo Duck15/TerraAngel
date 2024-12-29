@@ -1,14 +1,14 @@
 #!/usr/bin/env pwsh
-#Requires -Version 7
+#Requires -Version 5
 
 param (
-    [switch] $Update,
-    [switch] $Download,
-    [switch] $UpdateGame,
+    [switch] $Update, # 从仓库拉取 pull
+    [switch] $Download, # 下载Linux下的依赖
+    [switch] $UpdateGame, 
     [switch] $Start,
-    [switch] $Decompile,
-    [switch] $Patch,
-    [switch] $Compile,
+    [switch] $Decompile, # 将Terraria解包到src
+    [switch] $Patch, # 将TerraAngel打包进解包的Terraria
+    [switch] $Compile, #编译TerraAngel
     [switch] $Diff
 )
 

@@ -25,7 +25,7 @@ public class AutoAimTool : Tool
 
         if (Enabled)
         {
-            if (ImGui.CollapsingHeader("自动攻击 设置"))
+            if (ImGui.CollapsingHeader("自瞄设置"))
             {
                 ImGui.Indent();
                 ImGui.SliderFloat("最小目标范围", ref MinAttackRange, 1f, 2000f);

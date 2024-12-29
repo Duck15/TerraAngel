@@ -6,7 +6,7 @@ namespace TerraAngel.Tools.Inspector;
 
 public class ItemInspectorTool : InspectorTool
 {
-    public override string Name => "Item Inspector";
+    public override string Name => "物品分类";
 
     private int SelectedItemIndex = -1;
 
@@ -43,13 +43,13 @@ public class ItemInspectorTool : InspectorTool
         if (ImGui.IsItemHovered())
         {
             ImGui.BeginTooltip();
-            ImGui.Text($"Teleport to \"{SelectedItem.Name.Truncate(30)}\"");
+            ImGui.Text($"传送到 \"{SelectedItem.Name.Truncate(30)}\"");
             ImGui.EndTooltip();
         }
 
         if (ImGui.Button($"{Icon.CircleSlash}"))
         {
-            ClientLoader.Console.WriteError("Not implemented yet");
+            ClientLoader.Console.WriteError("Not implemented yet 尚未实现");
         }
         if (ImGui.IsItemHovered())
         {
