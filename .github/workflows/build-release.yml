@@ -1,0 +1,38 @@
+name: TerraAngel CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        configuration: [Release]
+    
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Install Linux Deps
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libopenal-dev libgl1-mesa-dev
+
+    - name: Build TerraAngel
+      shell: pwsh
+      run: ./fast.ps1 -Compile
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: TerraAngel_${{ matrix.os }}
+        path: src/TerraAngel/Terraria/bin/${{ matrix.configuration }}/net8.0/*
