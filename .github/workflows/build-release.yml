@@ -6,7 +6,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
+        os: [windows-latest]
         configuration: [Release]
     
     runs-on: ${{ matrix.os }}
@@ -20,16 +20,15 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-
-    - name: Install Linux Deps
-      if: matrix.os == 'ubuntu-latest'
+        
+    - name: Get Terraria 
       run: |
-        sudo apt-get update
-        sudo apt-get install -y libopenal-dev libgl1-mesa-dev
-
+        dir
+        
+        
     - name: Build TerraAngel
       shell: pwsh
-      run: ./fast.ps1 -Compile
+      run: ./fast.ps1 -Download -Start
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
